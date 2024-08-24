@@ -1,5 +1,10 @@
 # create react app
 # configured tailwind css from their docs
+# header
+# login from
+# sign up form
+# routin
+# useref hooks
 
 
 # Features
