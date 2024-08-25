@@ -1,7 +1,6 @@
 import React, { useState ,useRef} from 'react'
 import Header from './Header'
-import {validateFunction} from "../Utils/validator";
-import { validateemailandpass } from '../Utils/validator';
+import {validateFunction,validateemailandpass} from "../Utils/validator";
 
 const Login = () => {
     const [issigninform,setissigninform] = useState(true)
@@ -13,12 +12,16 @@ const Login = () => {
     const mobile = useRef(null)
     const reenter = useRef(null)
 
+    // useRef is a special hook in react to give and use the reference to any particular element or anything suppose an input field for example in this case
+    // we can use its value for further operations
+
 
     const handleButtonClick = ()  =>{
         // validate the form data
 
      if(!issigninform){
         const message = validateFunction(
+            // name.current.value ->  this gives the exact ref value of the current value
             name.current.value,
             email.current.value,
             password.current.value,
@@ -48,10 +51,11 @@ const Login = () => {
   return (
     <div>
         <Header />
-        <div className='absolute'>
+        <div className='absolute'>  {/** This image is absolute to its parent position which is the body */}
             <img src="https://repository-images.githubusercontent.com/299409710/b42f7780-0fe1-11eb-8460-e459acd20fb4" alt="bg" />
         </div>
 
+            {/** e.preventDefault()   prevents automatic submission when the submit button is pressed */}
         <form onSubmit={(e)=>{e.preventDefault()}} className='bg-black absolute p-12 my-36 mx-auto right-0 left-0 w-3/12 bg-opacity-70 text-white' >
         <h1 className='text-3xl font-bold py-4'>{issigninform?'Sign In':'Sign Up'}</h1>
            {!issigninform &&  <input type='text' ref={name} placeholder='Full Name' className='p-2 my-4 w-full bg-gray-700' />}
