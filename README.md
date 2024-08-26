@@ -5,6 +5,11 @@
 # sign up form
 # routin
 # useref hooks
+# validation  (using 2 js files which are in utils)
+# firebbase set up 
+#  Authentication purpose 
+# Firebase set up in vs code
+# Deploy the project on Firebase
 
 
 # Features

@@ -1,6 +1,10 @@
 import React, { useState ,useRef} from 'react'
 import Header from './Header'
 import {validateFunction,validateemailandpass} from "../Utils/validator";
+import { createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "firebase/auth";
+import { auth } from '../Utils/firebase';
+
+
 
 const Login = () => {
     const [issigninform,setissigninform] = useState(true)
@@ -29,19 +33,55 @@ const Login = () => {
             mobile.current.value
         );
         seterrormessage(message)
+
+        if(message) return;
+
+        // Sign-up logic   go to firebase documentation and copy paste from there
+        createUserWithEmailAndPassword(auth, 
+            email.current.value,
+            password.current.value,)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    console.log(user);
+    
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    seterrormessage(errorCode+" "+errorMessage)
+    // ..
+  });
+
+
      }else{
         const message = validateemailandpass(email.current.value,password.current.value)
         seterrormessage(message)
+
+        if(message)  return;
+
+        // sign in logic
+        signInWithEmailAndPassword(auth,email.current.value,password.current.value)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user);
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    seterrormessage(errorCode +"-"+ errorMessage)
+  });
+
+
+
      }
     //  console.log(message); 
         // console.log(email);
         // console.log(email.current.value);
         // console.log(password);
-
-
-        // sign in or sign up    
-
-
     }
 
     const handlesignin = () =>{
