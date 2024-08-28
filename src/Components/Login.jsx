@@ -1,15 +1,18 @@
 import React, { useState ,useRef} from 'react'
 import Header from './Header'
 import {validateFunction,validateemailandpass} from "../Utils/validator";
-import { createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "firebase/auth";
+import { createUserWithEmailAndPassword ,signInWithEmailAndPassword ,updateProfile} from "firebase/auth";
 import { auth } from '../Utils/firebase';
-
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {addUser} from "../Utils/userSlice"
 
 
 const Login = () => {
     const [issigninform,setissigninform] = useState(true)
     const [errormessage,seterrormessage] = useState(null)
-
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     const name = useRef(null)
     const email = useRef(null)
     const password = useRef(null)
@@ -43,6 +46,17 @@ const Login = () => {
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
+    updateProfile(user, {
+      displayName: name.current.value, photoURL: "https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
+    }).then(() => {
+      // Profile updated!
+      const {uid,email,displayName,photoURL} = auth.currentUser
+      dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}))
+    navigate("/browse")
+    }).catch((error) => {
+      // An error occurred
+      seterrormessage(error.message)
+    });
     console.log(user);
     
     // ...
@@ -67,6 +81,7 @@ const Login = () => {
     // Signed in 
     const user = userCredential.user;
     console.log(user);
+    navigate("/browse")
     // ...
   })
   .catch((error) => {
