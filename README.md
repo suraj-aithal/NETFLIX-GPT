@@ -10,6 +10,8 @@
 #  Authentication purpose 
 # Firebase set up in vs code
 # Deploy the project on Firebase
+# Finished sign-in and sign-up
+# created the redux store
 
 
 # Features
