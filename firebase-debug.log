@@ -1,0 +1,29 @@
+[debug] [2024-09-03T07:07:21.513Z] ----------------------------------------------------------------------
+[debug] [2024-09-03T07:07:21.515Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Suraj Aithal\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-09-03T07:07:21.515Z] CLI Version:   13.15.4
+[debug] [2024-09-03T07:07:21.516Z] Platform:      win32
+[debug] [2024-09-03T07:07:21.516Z] Node Version:  v18.15.0
+[debug] [2024-09-03T07:07:21.517Z] Time:          Tue Sep 03 2024 12:37:21 GMT+0530 (India Standard Time)
+[debug] [2024-09-03T07:07:21.517Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-09-03T07:07:21.522Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-09-03T07:07:21.655Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-03T07:07:21.656Z] > authorizing via signed-in user (surajaithal8@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\netfilx-gpt
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[debug] [2024-09-03T07:07:21.670Z] *** [apiv2] error from fetch(https://firebase-public.firebaseio.com/cli.json, {"headers":{},"method":"GET"}): FetchError: request to https://firebase-public.firebaseio.com/cli.json failed, reason: getaddrinfo ENOTFOUND firebase-public.firebaseio.com
+[warn] !  Unable to fetch the CLI MOTD and remote config. This is not a fatal error, but may indicate an issue with your network connection. 
+[debug] [2024-09-03T07:07:21.671Z] Failed to fetch MOTD FirebaseError: Failed to make request to https://firebase-public.firebaseio.com/cli.json

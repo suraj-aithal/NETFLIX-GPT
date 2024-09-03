@@ -6,13 +6,13 @@ import { auth } from '../Utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {addUser} from "../Utils/userSlice"
+import { LOGIN_IMG, USER_IMG } from '../Utils/constant';
 
 
 const Login = () => {
     const [issigninform,setissigninform] = useState(true)
     const [errormessage,seterrormessage] = useState(null)
     const dispatch = useDispatch()
-    const navigate = useNavigate()
     const name = useRef(null)
     const email = useRef(null)
     const password = useRef(null)
@@ -47,12 +47,11 @@ const Login = () => {
     // Signed up 
     const user = userCredential.user;
     updateProfile(user, {
-      displayName: name.current.value, photoURL: "https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
+      displayName: name.current.value, photoURL: USER_IMG
     }).then(() => {
       // Profile updated!
       const {uid,email,displayName,photoURL} = auth.currentUser
       dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}))
-    navigate("/browse")
     }).catch((error) => {
       // An error occurred
       seterrormessage(error.message)
@@ -80,8 +79,6 @@ const Login = () => {
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    console.log(user);
-    navigate("/browse")
     // ...
   })
   .catch((error) => {
@@ -107,7 +104,7 @@ const Login = () => {
     <div>
         <Header />
         <div className='absolute'>  {/** This image is absolute to its parent position which is the body */}
-            <img src="https://repository-images.githubusercontent.com/299409710/b42f7780-0fe1-11eb-8460-e459acd20fb4" alt="bg" />
+            <img src={LOGIN_IMG} alt="bg" />
         </div>
 
             {/** e.preventDefault()   prevents automatic submission when the submit button is pressed */}
