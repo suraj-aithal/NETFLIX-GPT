@@ -15,9 +15,13 @@ const Secondarycontainer = () => {
       Movie list - High Rated
       and many more stuff
       */}
-      <MovieList title={"Trending"} movies={movies.nowplayingmovies} />
-      <MovieList title={"Popular"} movies={movies.nowplayingmovies} />
-      <MovieList title={"High Rated"} movies={movies.nowplayingmovies} />
+      <MovieList title={"Popular"} movies={movies.popularmovie} />
+      <MovieList title={"Top Rated"} movies={movies.topratedmovies} />
+      <MovieList title={"Upcoming"} movies={movies.upcomingmovies} />
+      <MovieList title={"TV Seires Airing today"} movies={movies.airingtoday} />
+      <MovieList title={"On the air"} movies={movies.ontheair} />
+      <MovieList title={"Poplar TV Series"} movies={movies.popularseries} />
+      <MovieList title={"Top Rated TV Series"} movies={movies.topseries} />
     </div>
   )
 }
