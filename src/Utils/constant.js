@@ -4,3 +4,11 @@ export const LOGIN_IMG = "https://repository-images.githubusercontent.com/299409
 
 
 export const USER_IMG = "https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg"
+
+export const API_OPTIONS = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMmI0MGE1NTkyYzIxZjZhZmM2MGI2NjgzNjQxYzZjNCIsIm5iZiI6MTcyNTM1NTQzNi40NTExMDUsInN1YiI6IjY2ZDZkMzQyYzdjZjAwMGU5MjhkZDc0YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-ccWgSmkx0LdWUC9yrEml4cciwqKYF77iJl_pgAoL5E'
+    }
+  };

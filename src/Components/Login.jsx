@@ -50,13 +50,12 @@ const Login = () => {
       displayName: name.current.value, photoURL: USER_IMG
     }).then(() => {
       // Profile updated!
-      const {uid,email,displayName,photoURL} = auth.currentUser
+      const {uid,email,displayName,photoURL} = auth.currentUser // always use auth.currentUser not user here
       dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}))
     }).catch((error) => {
       // An error occurred
       seterrormessage(error.message)
     });
-    console.log(user);
     
     // ...
   })
