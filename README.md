@@ -24,6 +24,15 @@
 -> created a new constatnt file for hardcoded string data
 -> created the return funcition in useeffect as onauthstatechange returns a unsubscribe function and we just called it to unsubscribe so that the useeffect does not overload each time the header is rendered and the useeffect is called each time 
 
+# primary container of browse page
+->  made the api call to tmbd too fetch the movies in the api refefence and keep it in browse page 
+-> created the trailer by using the video section api reference
+-> created a new slice to keep the trailer and the movie data in the redux store
+
+# secondary container of browse page
+
+->  
+
 
 # Features
    - LoGIN/Sign up

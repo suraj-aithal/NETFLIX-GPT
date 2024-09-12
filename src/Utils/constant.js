@@ -12,3 +12,6 @@ export const API_OPTIONS = {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMmI0MGE1NTkyYzIxZjZhZmM2MGI2NjgzNjQxYzZjNCIsIm5iZiI6MTcyNTM1NTQzNi40NTExMDUsInN1YiI6IjY2ZDZkMzQyYzdjZjAwMGU5MjhkZDc0YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-ccWgSmkx0LdWUC9yrEml4cciwqKYF77iJl_pgAoL5E'
     }
   };
+
+
+export const CARD_PIC = "https://image.tmdb.org/t/p/w500/"
