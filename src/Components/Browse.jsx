@@ -9,8 +9,13 @@ import Useairingtoday from "../hooks/useairingtodayseries";
 import Useontheair from "../hooks/useOntheair";
 import Useseriespopular from "../hooks/useseriespopular";
 import Usetopratedseries from "../hooks/useTopseries";
+import { useSelector } from "react-redux";
+import GptSearch from "./GptSearch";
 
 const Browse = () => {
+
+  const show = useSelector((store)=>store.gpt.showgptsearch);
+
     UseNowPlaying();
     Usepopularmovies();
     Usetopratedmovies();
@@ -31,8 +36,10 @@ const Browse = () => {
          -Movielist * n
          - cards * n
       */}
-      <Maincontainer />
-      <Secondarycontainer />
+     {
+      show?<GptSearch />:<> <Maincontainer />
+      <Secondarycontainer /></>
+     }
     </div>
   )
 }

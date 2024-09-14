@@ -15,3 +15,22 @@ export const API_OPTIONS = {
 
 
 export const CARD_PIC = "https://image.tmdb.org/t/p/w500/"
+
+export const SUPPORTED_LANGUAGES = [
+  {
+    identifier:"en",
+    name:"English"
+  },
+  {
+    identifier:"hi", 
+    name:"Hindi"
+  },
+  {
+    identifier:"sp", 
+    name:"Spanish"
+  },
+  {
+    identifier:"jp", 
+    name:"Japaneese"
+  },
+]
