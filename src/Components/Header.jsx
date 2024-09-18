@@ -16,7 +16,7 @@ const Header = () => {
   const dispatch = useDispatch()
   const user = useSelector(store => store.user)
   const showgptsearch = useSelector((store) => store.gpt.showgptsearch)
-  console.log(showgptsearch)
+  // console.log(showgptsearch)
   const handlegpt = () =>{
     dispatch(togglegptpage());
   }
